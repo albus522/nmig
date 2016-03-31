@@ -267,11 +267,8 @@
          newLine += field;
        } else if (this.options.quotedEmpty || ((this.options.quotedEmpty == null) && line[i] === '' && this.options.quotedString)) {
          newLine += quote + quote;
-       } else {
-          // No "else" block here in the original version.
-          newLine += "''";
        }
-
+       
        if (i !== line.length - 1) {
          newLine += delimiter;
        }
