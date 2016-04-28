@@ -1,3 +1,5 @@
+<h3>NOTICE: This fork treats tinyint as boolean</h3>
+
 <h3>NMIG - the database migration tool.</h3>
 
 <h3>WHAT IS IT ALL ABOUT?</h3>
@@ -15,7 +17,7 @@ from MySQL to PostgreSQL as easy and smooth as possible.</p>
 Chunk size can be adjusted easily via configuration file.</li>
 
 <li> Speed of data transfer - in order to migrate data fast NMIG uses PostgreSQL COPY protocol.</li>
-   
+
 <li>Ease of monitoring - NMIG will provide detailed output about every step, it takes during the execution.</li>
 <li>
  Ease of configuration - all the parameters required for migration should be put in one single JSON document.
