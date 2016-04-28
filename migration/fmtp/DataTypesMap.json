@@ -25,8 +25,8 @@
     },
 
     "tinyint" : {
-        "increased_size"           : "int",
-        "type"                     : "smallint",
+        "increased_size"           : "",
+        "type"                     : "boolean",
         "mySqlVarLenPgSqlFixedLen" : true
     },
 
@@ -77,7 +77,7 @@
         "type"                     : "geometry",
         "mySqlVarLenPgSqlFixedLen" : false
     },
-    
+
     "numeric" : {
         "increased_size"           : "",
         "type"                     : "numeric",

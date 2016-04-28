@@ -1337,6 +1337,10 @@ FromMySQL2PostgreSQL.prototype.processDefault = function(self) {
 
                                 if (sqlReservedValues[self._clonedSelfTableColumns[i].Default]) {
                                     sql += sqlReservedValues[self._clonedSelfTableColumns[i].Default] + ';';
+                                } else if (self._clonedSelfTableColumns[i].Type == 'tinyint(1)') {
+                                    sql += (self._clonedSelfTableColumns[i].Default == '0')
+                                           ? "false;"
+                                           : "true;";
                                 } else {
                                     sql += self.isFloatNumeric(self._clonedSelfTableColumns[i].Default)
                                            ? self._clonedSelfTableColumns[i].Default + ';'
@@ -1355,7 +1359,7 @@ FromMySQL2PostgreSQL.prototype.processDefault = function(self) {
                                         resolveProcessDefault();
                                     } else {
                                         let success = '\t--[processDefault] Set default value for "' + self._schema + '"."' + self._clonedSelfTableName
-                                                    + '"."' + self._clonedSelfTableColumns[i].Field + '"...';
+                                                    + '"."' + self._clonedSelfTableColumns[i].Field + '" to ' + self._clonedSelfTableColumns[i].Default + '...';
 
                                         self.log(self, success);
                                         resolveProcessDefault();
